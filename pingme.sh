@@ -74,11 +74,11 @@ echo "Post processing now completed"
 postProcess
 
 #Sql insertion into predefined database and table.
-
-mysql -u root << EOF
-use PingScript
+source credentials
+mysql -u $user << EOF
+use $base
 LOAD DATA INFILE '/var/lib/mysql-files/output.csv'
-INTO TABLE results
+INTO TABLE $table
 FIELDS TERMINATED BY ',';
 EOF
 
