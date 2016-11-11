@@ -44,8 +44,7 @@ do
     echo "Please try again"
 done
 
-read -p "Now Please enter your Mysql ROOT password. Press {ENTER} to 
-continue"
+read -p "Now Please enter your Mysql ROOT password. Press {ENTER} to continue"
 mysql -u root -p << EOF
 CREATE DATABASE x$base;
 CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
