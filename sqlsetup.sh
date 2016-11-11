@@ -55,14 +55,7 @@ EOF
 
 mysql -u $user -p$pass << EOF
 use x$base
-create table $table (
-Date VARCHAR(30), 
-Hostname VARCHAR(30), 
-IP VARCHAR(30), 
-TTL VARCHAR(10), 
-Loss VARCHAR(20), 
-Time VARCHAR(20)
-);
+create table $table (Date VARCHAR(30), Hostname VARCHAR(30), IP VARCHAR(30), TTL VARCHAR(10), Loss VARCHAR(20), Time VARCHAR(20));
 EOF
 
 echo "#! /bin/bash" > credentials
