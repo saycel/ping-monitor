@@ -46,16 +46,16 @@ done
 
 read -p "Now Please enter your Mysql ROOT password. Press {ENTER} to continue"
 mysql -u root -p << EOF
-CREATE DATABASE $base;
-CREATE USER $user@localhost IDENTIFIED BY $pass;
-GRANT ALL ON $base.* TO $user@localhost;
+CREATE DATABASE x$base;
+CREATE USER $user@localhost IDENTIFIED BY '$pass';
+GRANT ALL ON x$base.* TO $user@localhost;
 FLUSH PRIVILEGES;
 \q
 EOF
 
 mysql -u $user -p$pass << EOF
-use $base
-create table (
+use x$base
+create table $table (
 Date VARCHAR(30), 
 Hostname VARCHAR(30), 
 IP VARCHAR(30), 
@@ -68,6 +68,6 @@ EOF
 echo "#! /bin/bash" > credentials
 echo "user=$user" >> credentials
 echo "pass=$pass" >> credentials
-echo "base=$base" >> credentials
+echo "base=x$base" >> credentials
 echo "table=$table" >> credentials
 
