@@ -56,12 +56,12 @@ EOF
 mysql -u $user -p$pass << EOF
 use x$base
 create table $table (
-Date VARCHAR(30), 
-Hostname VARCHAR(30), 
+date VARCHAR(30), 
+hostname VARCHAR(30), 
 IP VARCHAR(30), 
 TTL VARCHAR(10), 
-Loss VARCHAR(20), 
-Times VARCHAR(20) );
+loss VARCHAR(20), 
+times VARCHAR(20) );
 EOF
 
 
