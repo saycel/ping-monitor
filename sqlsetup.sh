@@ -68,5 +68,5 @@ echo "#! /bin/bash" > credentials
 echo "user=$user" >> credentials
 echo "pass=$pass" >> credentials
 echo "base=$base" >> credentials
-
+echo "table=$table" >> credentials
 
