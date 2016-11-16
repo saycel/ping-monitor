@@ -61,7 +61,7 @@ hostname VARCHAR(30),
 IP VARCHAR(30), 
 TTL VARCHAR(10), 
 loss VARCHAR(20), 
-times VARCHAR(20) );
+ResponseTime VARCHAR(20) );
 EOF
 
 
