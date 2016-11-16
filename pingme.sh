@@ -29,6 +29,6 @@ field6=$(date)
 
 source credentials
 mysql -u $user -p$pass $base << EOF
-INSERT INTO $table (date,hostname,IP,TTL,loss,times) VALUES 
+INSERT INTO $table (date,hostname,IP,TTL,loss,ResponseTime) VALUES 
 ('$field6','$field5','$field1','$field2','$field3','$field4');
 EOF
