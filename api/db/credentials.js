@@ -1,9 +1,9 @@
 'use strict';
 function Credentials(){
-	this.host = 'localhost';
-	this.user = 'dhruv';
-	this.password = 'raj*1989';
-	this.database = 'xresults';
+	this.host = '#######';
+	this.user = '###############';
+	this.password = '##########################';
+	this.database = '#########################';
 }
 
 module.exports = {
