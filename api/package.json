@@ -1,0 +1,17 @@
+{
+  "name": "saycel-network-monitor",
+  "version": "1.0.0",
+  "description": "application to check the status of our Nicaragua network",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dhruv Mehrotra and Jonathan Morales",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "locus": "^1.2.0",
+    "mysql": "^2.12.0",
+    "underscore": "^1.8.3"
+  }
+}

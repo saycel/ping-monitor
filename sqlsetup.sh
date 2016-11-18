@@ -65,9 +65,11 @@ ResponseTime VARCHAR(20) );
 EOF
 
 
-echo "#! /bin/bash" > credentials
-echo "user=$user" >> credentials
-echo "pass=$pass" >> credentials
-echo "base=x$base" >> credentials
-echo "table=$table" >> credentials
+#directory for storing credentials file
+storage="/home/credentials"
+echo "user=$user" >> $storage
+echo "pass=$pass" >> $storage
+echo "base=x$base" >> $storage
+echo "table=$table" >> $storage
+
 
