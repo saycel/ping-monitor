@@ -1,3 +1,0 @@
-create IP file housing several IP addresses to run the script againt.
-setup loop for running each IP against the script one at a time
-setup chmod and chown for sqlsetup script ( origin of syntax error)
