@@ -60,7 +60,7 @@ date VARCHAR(30),
 hostname VARCHAR(30), 
 IP VARCHAR(30), 
 TTL VARCHAR(10), 
-loss VARCHAR(20), 
+loss VARCHAR(2000), 
 ResponseTime VARCHAR(20) );
 EOF
 
