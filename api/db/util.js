@@ -1,19 +1,28 @@
 'use strict';
-
 var _ = require('underscore');
+var mysql      = require('mysql');
+var credentials = require("./credentials")
+
+var connection = mysql.createConnection({
+  host     : credentials.retrieve().host,
+  user     : credentials.retrieve().user,
+  password : credentials.retrieve().password,
+  database : credentials.retrieve().database
+});
+
+
 function Util(){
 	this.description = "Utility for parsing the database"
 }
+
+
 Util.prototype.getCurrentStatus = function(){
-	eval(require('locus'))
-	// var work = {sessions:[0]};
-	// _.each(not_home_networks, function(n){
-	// 	if (n.sessions.length > work.sessions.length){
-	// 		work = n;
-	// 	}
-	// })
-	// work.work = true;
-	// return work;
+	connection.connect();
+	connection.query('SELECT * FROM results', function(err, rows, fields) {
+  		if (err) throw err;
+  		console.log('The solution is: ', rows[0]);
+	});	
+	connection.end();
 }
 
 module.exports = {
