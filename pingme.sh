@@ -1,15 +1,19 @@
 #! /bin/bash
 
+#Enter your IP addresses in the format "IP[x]=IPADDRESS" for example IP[1]=8.8.8.8
 
-#select IP to ping
-read -p "Which IP would you like to ping? " IP
-results=$(ping -c 1 $IP)
+#List of IP addresses to log
+IP[1]=8.8.8.8
+
+#Begins loop through all IP Addresses provided
+for i in "${IP[@]}"
+do
+results=$(ping -c 1 $i)
 
 # Ping from IP
-field1=$(awk -F':' '{print $1}' <<< $results)
-field1=$(sed -n -e 's/^.*bytes from//p' <<< $field1)
+field1=$(echo $1)
 
-#TIme to Live
+#Time to Live
 field2=$(awk -F'=' '{print $3}' <<< $results)
 field2=$(sed  -e 's/time//' <<< $field2)
 field2=$(awk -F':' '{print "ttl= "$0}' <<< $field2)
@@ -32,3 +36,4 @@ mysql -u $user -p$pass $base << EOF
 INSERT INTO $table (date,hostname,IP,TTL,loss,ResponseTime) VALUES 
 ('$field6','$field5','$field1','$field2','$field3','$field4');
 EOF
+done #End of loop
