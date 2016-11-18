@@ -11,7 +11,7 @@ do
 results=$(ping -c 1 $i)
 
 # Ping from IP
-field1=$(echo $1)
+field1=$(echo $i)
 
 #Time to Live
 field2=$(awk -F'=' '{print $3}' <<< $results)
