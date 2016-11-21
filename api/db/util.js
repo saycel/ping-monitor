@@ -29,10 +29,16 @@ Util.prototype.getCurrentStatus = function(callback){
 			"response": data.ResponseTime
 		}
 		callback(json)
-	});	
-
-	
-
+	});		
+}
+Util.prototype.getMonthlyReport = function(callback){
+	var json;
+	connection.query("select * from results where monthname(date) = 'November'", function(err, rows, fields) {
+  		if (err) throw err;
+  		eval(require('locus'))
+		
+		callback(json)
+	});		
 }
 
 module.exports = {
