@@ -56,7 +56,7 @@ EOF
 mysql -u $user -p$pass << EOF
 use x$base
 create table $table (
-date VARCHAR(30), 
+date DATETIME, 
 hostname VARCHAR(30), 
 IP VARCHAR(30), 
 TTL VARCHAR(10), 

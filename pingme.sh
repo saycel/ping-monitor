@@ -29,7 +29,7 @@ field4=$(awk -F'---' '{ print $1 }' <<< $field4)
 field5=$(hostname)
 
 #Date
-field6=$(date)
+field6=$(date +'%F %T')
 
 #input credentials from credentials file into currently runnning script
 source /home/credentials
