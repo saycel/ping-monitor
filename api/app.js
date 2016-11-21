@@ -3,7 +3,10 @@ var app = express();
 var db = require('./db/util.js');
 
 app.get('/current-status', function(req,res){
-	db.util().getCurrentStatus();
+	db.util().getCurrentStatus(function(ping){
+		res.json(ping)
+	});
+	
     
 })
 

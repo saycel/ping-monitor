@@ -16,13 +16,23 @@ function Util(){
 }
 
 
-Util.prototype.getCurrentStatus = function(){
-	connection.connect();
+Util.prototype.getCurrentStatus = function(callback){
+	var json;
 	connection.query('SELECT * FROM results', function(err, rows, fields) {
   		if (err) throw err;
-  		console.log('The solution is: ', rows[0]);
+  		console.log('most recent ping: ', rows[rows.length - 1]);
+		var data = rows[rows.length - 1]
+		json = {
+			"raw":data,
+			"date":data.date,
+			"loss": data.loss.split(' ')[1] + " packet loss round-trip",
+			"response": data.ResponseTime
+		}
+		callback(json)
 	});	
-	connection.end();
+
+	
+
 }
 
 module.exports = {
