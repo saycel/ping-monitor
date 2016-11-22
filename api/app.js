@@ -8,10 +8,17 @@ app.get('/current-status', function(req,res){
 	}); 
 })
 
-app.get('/monthly-report', function(req,res){
-	db.util().getMonthlyReport(function(ping){
-		// res.json(ping)
+app.get('/monthly-report/:month', function(req,res){
+	db.util().getMonthlyReport(req.params.month,function(ping){
+		res.json(ping)
 	}); 
+})
+
+
+app.get('/query/:year/:month?/:day?', function(req,res){
+	db.util().query(req.params.year,req.params.month,req.params.day,function(ping){
+		res.json(ping)
+	});	
 })
 
 app.listen(8080,function(){

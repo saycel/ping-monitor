@@ -57,7 +57,7 @@ mysql -u $user -p$pass << EOF
 use x$base
 create table $table (
 date DATETIME, 
-hostname VARCHAR(30), 
+hostname VARCHAR(2000), 
 IP VARCHAR(30), 
 TTL VARCHAR(10), 
 loss VARCHAR(2000), 
@@ -66,10 +66,10 @@ EOF
 
 
 #directory for storing credentials file
-storage="/home/credentials"
-echo "user=$user" >> $storage
-echo "pass=$pass" >> $storage
-echo "base=x$base" >> $storage
-echo "table=$table" >> $storage
+echo "#! /bin/bash" > credentials
+echo "user=$user" >> credentials
+echo "pass=$pass" >> credentials
+echo "base=x$base" >> credentials
+echo "table=$table" >> credentials
 
 
