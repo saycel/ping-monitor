@@ -11,6 +11,9 @@ GET 162.243.238.142:8080/monthly-report/{{month-name}} -> returns a full month o
 
 GET 162.243.238.142:8080/query/:year/:month?/:day?' -> query a specific day  
 ---eg; 162.243.238.142:8080/query/2017/01/15  
+
 GET 162.243.238.142:8080/query/2017 -> query a year  
+
 GET 162.243.238.142:8080/query/2017/01 -> query a month  
+
 
