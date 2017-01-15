@@ -15,4 +15,9 @@ GET 162.243.238.142:8080/query/2017 ---> query a year
 
 GET 162.243.238.142:8080/query/2017/01 ---> query a month  
 
-
+###TODO
+1. Front End Widget for Website
+2. Extend API to query multiple saycel networks -- more towers // our sensor network in Bluefields  
+3. Get domain name  
+4. Annual ping backups
+5. Front End Widget for Website
