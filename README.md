@@ -7,3 +7,4 @@
 ## -Table
 ## -Store user, password, database, and table names in credentials file
 
+node app.js > stdout.txt 2> stderr.txt &
