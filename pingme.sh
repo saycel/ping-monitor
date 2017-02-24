@@ -3,8 +3,8 @@
 #Enter your IP addresses in the format "IP[x]=IPADDRESS" for example IP[1]=8.8.8.8
 
 #List of IP addresses to log
-IP[1]=8.8.8.8
-
+IP[1]=10.99.0.10
+IP[2]=8.8.8.8
 #Begins loop through all IP Addresses provided
 for i in "${IP[@]}"
 do
@@ -32,7 +32,7 @@ field5=$(hostname)
 field6=$(date +'%F %T')
 
 #input credentials from credentials file into currently runnning script
-source credentials
+source /var/lib/ping-monitor/credentials
 
 mysql -u $user -p$pass $base << EOF
 INSERT INTO $table (date,hostname,IP,TTL,loss,ResponseTime) VALUES 
