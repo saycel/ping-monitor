@@ -32,7 +32,8 @@ field5=$(hostname)
 field6=$(date +'%F %T')
 
 #input credentials from credentials file into currently runnning script
-source credentials
+credentials="$(pwd/credentials)"
+source $credentials
 
 mysql -u $user -p$pass $base << EOF
 INSERT INTO $table (date,hostname,IP,TTL,loss,ResponseTime) VALUES 
