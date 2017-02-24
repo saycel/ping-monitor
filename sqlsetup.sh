@@ -66,10 +66,11 @@ EOF
 
 
 #directory for storing credentials file
-echo "#! /bin/bash" > credentials
-echo "user=$user" >> credentials
-echo "pass=$pass" >> credentials
-echo "base=x$base" >> credentials
-echo "table=$table" >> credentials
+
+credentials="$(pwd/credentials)"
+echo "user=$user" >> $credentials
+echo "pass=$pass" >> $credentials
+echo "base=x$base" >> $credentials
+echo "table=$table" >> $credentials
 
 

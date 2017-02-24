@@ -32,7 +32,12 @@ field5=$(hostname)
 field6=$(date +'%F %T')
 
 #input credentials from credentials file into currently runnning script
+<<<<<<< HEAD
 source /var/lib/ping-monitor/credentials
+=======
+credentials="$(pwd/credentials)"
+source $credentials
+>>>>>>> 6ec35dcb2f0ff1708329a272c1b44738651c1de0
 
 mysql -u $user -p$pass $base << EOF
 INSERT INTO $table (date,hostname,IP,TTL,loss,ResponseTime) VALUES 
