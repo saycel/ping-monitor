@@ -5,19 +5,18 @@ Currently we ping our system every thirty minutes.  This will increase.
 
 ##API Routes
 
-GET 162.243.238.142:8080/current-status ---> returns most recent Ping  
+GET 162.243.238.142:8080/pearl-lagoon/current-status ---> returns most recent Ping  
 
-GET 162.243.238.142:8080/monthly-report/january ---> returns a full month of pings  
+GET 162.243.238.142:8080/pearl-lagoon/monthly-report/january ---> returns a full month of pings  
 
-GET 162.243.238.142:8080/query/2017/01/15  ---> query a specific day  
+GET 162.243.238.142:8080/pearl-lagoon/query/2017/01/15  ---> query a specific day  
 
-GET 162.243.238.142:8080/query/2017 ---> query a year  
+GET 162.243.238.142:8080/pearl-lagoon/query/2017 ---> query a year  
 
-GET 162.243.238.142:8080/query/2017/01 ---> query a month  
+GET 162.243.238.142:8080/pearl-lagoon/query/2017/01 ---> query a month  
 
 ###TODO
 1. Front End Widget for Website
-2. Extend API to query multiple saycel networks -- more towers // our sensor network in Bluefields  
 3. Get domain name  
 4. Annual ping backups
 5. Front End Widget for Website
