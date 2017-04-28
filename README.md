@@ -1,22 +1,25 @@
 #Saycel Uptime Monitor
-This code builds the API to monitor the wide area network uptime of our Pearl Lagoon Cellular Network.  It is still under development.  However API routes are now available to query to see historical and curr†ent data in formatted JSON.  For now here is an IP Address - Port && api-routes that you can query to see our pingtimes. Soon we will use a domain. 
 
+This code builds the API to monitor the wide area network uptime of our Cellular Network.  It is still under development.  However API routes are now available to query to see historical and current data in formatted JSON. 
 Currently we ping our system every thirty minutes.  This will increase. 
 
-##API Routes
+##Example API Routes
 
-GET 162.243.238.142:8080/pearl-lagoon/current-status ---> returns most recent Ping  
+GET http://saycel.net/pearl-lagoon/current-status ---> returns most recent Ping  
 
-GET 162.243.238.142:8080/pearl-lagoon/monthly-report/january ---> returns a full month of pings  
+GET http://saycel.net/pearl-lagoon/monthly-report/january ---> returns a full month of pings  
 
-GET 162.243.238.142:8080/pearl-lagoon/query/2017/01/15  ---> query a specific day  
+GET http://saycel.net/pearl-lagoon/query/2017/01/15  ---> query a specific day  
 
-GET 162.243.238.142:8080/pearl-lagoon/query/2017 ---> query a year  
+GET http://saycel.net/pearl-lagoon/query/2017 ---> query 2017  
 
-GET 162.243.238.142:8080/pearl-lagoon/query/2017/01 ---> query a month  
+GET http://saycel.net/pearl-lagoon/query/2017/01 ---> query January
+GET http://saycel.net/bluefields/current-status ---> query Bluefields
+
+GET http://saycel.net/research/current-status ---> query NYU labs.
+
 
 ###TODO
 1. Front End Widget for Website
-3. Get domain name  
 4. Annual ping backups
-5. Front End Widget for Website
+5. Make this pretty for UNICEF
