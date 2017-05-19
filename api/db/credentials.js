@@ -1,6 +1,6 @@
 'use strict';
  function Credentials(){
- 
+
  }
  
  module.exports = {

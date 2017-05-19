@@ -1,0 +1,45 @@
+listening on port 8080
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:30:02.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '223 ms ' }
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:30:02.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '223 ms ' }
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:33:21.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '167 ms ' }
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:33:21.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '167 ms ' }
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:33:21.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '167 ms ' }
+most recent ping:  RowDataPacket {
+  date: 2017-01-15T22:36:04.000Z,
+  hostname: 'saycel-2016',
+  IP: '10.99.0.10',
+  TTL: 'ttl= 64',
+  loss: ' 0% packet loss',
+  ResponseTime: '152 ms ' }
+2017
+2017
