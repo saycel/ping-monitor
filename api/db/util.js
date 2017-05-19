@@ -24,7 +24,6 @@ Util.prototype.getCurrentStatus = function(bsc,callback){
   		    if (err) throw err;
   		    console.log('most recent ping: ', rows[rows.length - 1]);
 		    var data = rows[rows.length - 1]
-
 		    callback(data)
 	    });
     }

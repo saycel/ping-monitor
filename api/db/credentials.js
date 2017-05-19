@@ -1,3 +1,7 @@
+'use strict';
+ function Credentials(){
+ 
+ }
  
  module.exports = {
  	retrieve: function(){

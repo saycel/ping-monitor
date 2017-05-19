@@ -1,3 +1,4 @@
 api/node_modules
 db/credentials.js
 credentials
+api/db/credentials.js
