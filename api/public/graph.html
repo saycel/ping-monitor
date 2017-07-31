@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html> 
+<meta charset="utf-8">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+html, body {
+	width:100%;
+	height:100%;
+	margin:0;
+	overflow:hidden;
+	font-size:16px;
+}
+.line {
+  clip-path: url(#clip);
+}
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: none;
+}
+
+.form-margins{
+	margin-left:50px;
+	margin-top:50px;
+	margin-bottom:50px;
+}
+.badgebox
+{
+    opacity: 0;
+}
+
+.badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+	width: 27px;
+}
+
+.badgebox:focus + .badge
+{
+    /* Set something to make the badge looks focused */
+    /* This really depends on the application, in my case it was: */
+    
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+}
+
+.badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+	text-indent: 0;
+}
+
+.dropdown {
+}
+
+.dropdown dd,
+.dropdown dt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown ul {
+  margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+  position: relative;
+}
+
+.dropdown a,
+.dropdown a:visited {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.dropdown dt a {
+  background-color: #4F6877;
+  display: block;
+  padding: 8px 20px 5px 10px;
+  min-height: 25px;
+  line-height: 24px;
+  overflow: hidden;
+  border: 0;
+  width: 272px;
+}
+
+.dropdown dt a span,
+.multiSel span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 3px 2px 0;
+}
+
+.dropdown dd ul {
+  background-color: #4F6877;
+  border: 0;
+  color: #fff;
+  display: none;
+  left: 0px;
+  padding: 2px 15px 2px 5px;
+  position: absolute;
+  top: 2px;
+  width: 280px;
+  list-style: none;
+  height: 100px;
+  overflow: auto;
+}
+
+.dropdown span.value {
+  display: none;
+}
+
+.dropdown dd ul li a {
+  padding: 5px;
+  display: block;
+}
+
+.dropdown dd ul li a:hover {
+  background-color: #fff;
+}
+
+
+</style>
+
+<body>
+<div class="container-fluid"> 
+
+<dl class="dropdown"> 
+  
+    <dt>
+    <a href="#">
+      <span class="hida">Select</span>    
+      <p class="multiSel"></p>  
+    </a>
+    </dt>
+  
+    <dd>
+        <div class="mutliSelect">
+            <ul>
+                <li>
+                    <input type="checkbox" value="Apple" />Apple</li>
+                <li>
+                    <input type="checkbox" value="Blackberry" />Blackberry</li>
+                <li>
+                    <input type="checkbox" value="HTC" />HTC</li>
+                <li>
+                    <input type="checkbox" value="Sony Ericson" />Sony Ericson</li>
+                <li>
+                    <input type="checkbox" value="Motorola" />Motorola</li>
+                <li>
+                    <input type="checkbox" value="Nokia" />Nokia</li>
+            </ul>
+        </div>
+    </dd>
+  <button>Filter</button>
+</dl>
+
+	<div class="list-group">
+		<a href="#" class="list-group-item">
+			<div class="checkbox pull-left">
+				<label>
+				<input type="checkbox" value="">				
+				<b>BlueFields</b>
+				</label>
+			</div>
+			<div class="clearfix"></div>
+		</a>
+		<a href="#" class="list-group-item">
+			<div class="checkbox pull-left">
+				<label>
+				<input type="checkbox">
+				<b>Pearl Lagoon</b>
+				</label>
+			</div>
+			<div class="clearfix"></div>
+		</a>
+		<a href="#" class="list-group-item">
+			<div class="checkbox pull-left">
+				<label>
+				<b>NYU</b>
+				<input class="badgebox" type="checkbox">
+				<span class = "badge">&check;</span>
+				</label>
+			</div>
+			<div class="clearfix"></div>
+		</a>
+	</div>
+	<div class="row form-margins">
+		<div class="col-md-12">
+			<label class="btn btn-lg btn-primary">Bluefields <input type="checkbox" id="bluefields" class="badgebox" checked><span class="badge">&check;</span></label>
+			<label class="btn btn-lg btn-success">Pearl Lagoon <input type="checkbox" id="pearl-lagoon" class="badgebox" checked><span class="badge">&check;</span></label>
+			<label class="btn btn-lg btn-warning">NYU <input type="checkbox" id="nyu" class="badgebox"><span class="badge">&check;</span></label>
+			<select id="year" class="form-control">
+				<option>2017</option>
+				<option>2016</option>
+			</select>
+
+			<select id="month" class="form-control">
+				<option></option>
+				<option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+				<option>05</option>
+				<option>06</option>
+				<option>07</option>
+				<option>08</option>
+				<option>09</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+
+			<select id="day" class="form-control"> <option></option> <option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+				<option>05</option>
+				<option>06</option>
+				<option>07</option>
+				<option>08</option>
+				<option>09</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+				<option>15</option>
+				<option>16</option>
+				<option>17</option>
+				<option>18</option>
+				<option>19</option>
+				<option>20</option>
+				<option>21</option>
+				<option>22</option>
+				<option>23</option>
+				<option>24</option>
+				<option>25</option>
+				<option>26</option>
+				<option>27</option>
+				<option>28</option>
+				<option>29</option>
+				<option>30</option>
+				<option>31</option>
+			</select>
+
+			<button type="button" id = "submit" class = "btn btn-default">Submit </button>
+		</div>
+	</div> 
+	<div class = "row">
+		<div class = "col-md-9">
+		<svg width="1920" height="1000" viewBox="0 0 1920 1000" preserveAspectRatio="xMinYMin meet" padding: "10"></svg>
+		</div>
+	</div>
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="./graph.js"></script>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+</body>
+</html>
