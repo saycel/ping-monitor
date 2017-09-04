@@ -1,9 +1,17 @@
 'use strict';
  function Credentials(){
- 	this.host = 'localhost';
- 	this.user = 'root';
- 	this.password = 'sayc3l!';
- 	this.database = 'statistics';
+ 	this.cellularDB = {
+ 		"host": 'localhost',
+ 		"user": '',
+ 		"password": '',
+ 		"database": ''
+ 	}
+ 	this.appDB = {
+ 		"host": 'rhizortc.specialstories.org',
+ 		"user": '',
+ 		"password": '',
+ 		"database": ''
+ 	}
  }
 
  module.exports = {
