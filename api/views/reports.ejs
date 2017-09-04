@@ -16,10 +16,31 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <style>
+.red{
+	color:red;
+}
 img{
 	width: 95%;
 	padding-top:2em;
 }
+.logo{
+	padding:0px;
+	max-width:100%;
+}
+a.navbar-brand{
+    position: relative;
+    width: 120px;
+    padding:0px;
+}
+h1{
+	text-align:center;
+	margin-bottom:10px;
+}
+.row p {
+	padding:25px;
+	font-size:20px;
+}
+
 </style>
 </head>
 <body>
@@ -34,8 +55,10 @@ img{
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="./1d">Saycel Reports</a>
-		</div>
+			<a class="navbar-brand" href="./1d">
+				<img src="../imgs/SayCel_Logo_web.png" class="logo img-responsive" alt="Responsive image"/>
+			</a>	
+</div>
 		<div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav navbar-right">
 		    <li><a href="./12h">12 hours</a></li>
@@ -49,35 +72,35 @@ img{
 
 <div class="container-fluid">
 
-<div class = "row">
-<div class = "col-md-8 col-md-offset-2">
-
-<h1>Reports for the past 
-<%if(data=='12h'){%> 12 hours <%}%> 
-<%if(data=='1d'){%> 1 day <%}%> 
-<%if(data=='1w'){%> 1 week <%}%> 
-<%if(data=='1m'){%> 1 month <%}%> 
-
-</h1>
+<div class="row">
+	<h1> Saycel Cellular Network Statistics </h1>
+	<p> These are our cellular network statistics. On the left you can see information about total calls and the network usage.  On the right you can see our equipment monitoring statistics. We also have an API available.  Details at <a href="https://github.com/saycel/ping-monitor"> Github: Ping Monitor </a> </p>
 </div>
+<div class="row">
+	<div class="col-md-6">
+		<p style="text-align:center; margin-bottom:0px">Call reports for the past week</p>
+		<img src="../imgs/total_minutes.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/total_calls.png" class="img-responsive" alt="Responsive image"/>
+	</div>
+
+	<div class = "col-md-6">
+
+		<p style='text-align:center; margin-bottom:0px'>System reports for the past <span class='red'>
+		<%if(data=='12h'){%> 12 hours <%}%>
+		<%if(data=='1d'){%> 1 day <%}%>
+		<%if(data=='1w'){%> 1 week <%}%>
+		<%if(data=='1m'){%> 1 month <%}%>
+</span>
+		</p>
+		<img src="../imgs/chans-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/cpu-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/eth0_traffic-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/loadaverage-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/memory-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+		<img src="../imgs/temperature-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
+	</div>
 </div>
 
-<div class = "row">
-<div class = "col-md-8 col-md-offset-2">
-
-
-<img src="../imgs/calls-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/chans-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/cpu-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/disk-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/eth0_errors-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/eth0_traffic-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/hlr_onlinenoreg-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/loadaverage-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/memory-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-<img src="../imgs/temperature-<%=data %>.png" class="img-responsive" alt="Responsive image"/>
-</div>
-</div>
 </div>
 </body>
 </html>

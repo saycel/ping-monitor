@@ -4,8 +4,7 @@
 
 #List of IP addresses to log
 IP[1]=10.99.0.10
-IP[2]=10.99.0.7
-IP[3]=190.107.210.237
+IP[2]=190.107.210.237
 #Begins loop through all IP Addresses provided
 for i in "${IP[@]}"
 do

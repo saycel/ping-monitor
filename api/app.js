@@ -9,7 +9,9 @@ app.set('view engine', 'ejs');
 app.get('/graph', function(req, res){
 	res.sendFile('graph.html',{root:'public'});
 });
-
+app.get('/',function(req,res){
+	res.redirect('/reports/1d');
+})
 app.get('/reports/:time', function(req, res){
 	var time = req.params.time;
 	res.render('reports.ejs', {data:time});
@@ -34,6 +36,6 @@ app.get('/:bsc/query/:year/:month?/:day?', function(req,res){
 	});	
 })
 
-app.listen(8080,function(){
+app.listen(80,function(){
 	console.log("listening on port 8080");
 });
