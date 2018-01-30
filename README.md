@@ -1,25 +1,18 @@
-#Saycel Uptime Monitor
+# Analytics API's
+This API is a central server that can query our various tools and deployments.  It is built to b flexible so that we can add more equipment and analytics endpoints as necessary.
 
-This code builds the API to monitor the wide area network uptime of our Cellular Network.  It is still under development.  However API routes are now available to query to see historical and current data in formatted JSON. 
-Currently we ping our system every thirty minutes.  This will increase. 
+## Uptime API
 
-##Example API Routes
+The Uptime API queries our Base Station Controllers and Servers in Pearl Lagoon and Bluefields. All queries can take pearl-lagoon, research, or bluefields as the first parameter, depending on what you are trying to query. 
+   - `GET http://saycel.net/pearl-lagoon/current-status`
+    -- Returns the current status of Pearl Lagoon BSC.  
+    - `GET http://saycel.net/pearl-lagoon/monthly-report/january`
+    -- Returns a JSON Array of uptimes for the month of January.  This is used for graphs and visualizations
+    - `GET http://saycel.net/pearl-lagoon/query/2017/01/15` 
+    -- This will return a single days worth of pings.  This is helpful for debugging uptime retroactively. 
+ 
+## WebPh.one API
+The Webphone API queries usage of the WebPhone.  Can take pearlcel, or rhizomatica as an argument. 
+- `GET "http://saycel.net/app/all/2017-2018` 
+-- This will return the Number of Calls and Minutes of Talk Time for 2017 and 2018.
 
-GET http://saycel.net/pearl-lagoon/current-status ---> returns most recent Ping  
-
-GET http://saycel.net/pearl-lagoon/monthly-report/january ---> returns a full month of pings  
-
-GET http://saycel.net/pearl-lagoon/query/2017/01/15  ---> query a specific day  
-
-GET http://saycel.net/pearl-lagoon/query/2017 ---> query 2017  
-
-GET http://saycel.net/pearl-lagoon/query/2017/01 ---> query January
-GET http://saycel.net/bluefields/current-status ---> query Bluefields
-
-GET http://saycel.net/research/current-status ---> query NYU labs.
-
-
-###TODO
-1. Front End Widget for Website
-4. Annual ping backups
-5. Make this pretty for UNICEF
