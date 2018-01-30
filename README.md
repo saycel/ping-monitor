@@ -2,7 +2,7 @@
 This API is a central server that can query our various tools and deployments.  It is built to b flexible so that we can add more equipment and analytics endpoints as necessary.
 
 ## Call Statistics API
-If there is power and backhaul is connected, the Call Statistics API will return the total number of calls made in Pearl Cel, as well as the Total Minutes spent on the phone.
+If there is power and backhaul is connected, the Call Statistics API will return the total number of calls made with PearlCel, as well as the total call time in minutes.
    - `GET http://http://saycel.net/pearlcel/calls`
     -- Returns the total number of calls made with Pearl Cel.  
     - `GET http://http://saycel.net/pearlcel/minutes`
