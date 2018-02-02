@@ -15,7 +15,7 @@ The Uptime API queries our Base Station Controllers and Servers in Pearl Lagoon 
     -- Returns the current status of Pearl Lagoon BSC.  
     - `GET http://saycel.net/pearl-lagoon/monthly-report/january`
     -- Returns a JSON Array of uptimes for the month of January.  This is used for graphs and visualizations
-    - `GET http://saycel.net/pearl-lagoon/query/2017/01/15` 
+    - `GET http://saycel.net/pearl-lagoon/query/2018/02/01` 
     -- This will return a single days worth of pings.  This is helpful for debugging uptime retroactively.
    
 ## WebPh.one API
